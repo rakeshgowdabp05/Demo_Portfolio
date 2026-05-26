@@ -1265,7 +1265,17 @@
       font-size: 1.1rem;
       flex-shrink: 0;
       width: 26px;
-      text-align: center
+      height: 26px;
+      object-fit: contain;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: filter .35s;
+    }
+
+    :root[data-theme="dark"] img.skill-item-icon[src*="express"] {
+      filter: invert(1) brightness(2.5);
     }
 
     .skill-item-name {
@@ -2782,63 +2792,67 @@
       <!-- Photo + Text -->
       <div class="about-layout reveal">
 
-      <div class="about-text-block">
-        <p>I'm <strong>Rakesh Gowda B P</strong>, a final-year Computer Science Engineering student passionate about
-          building end-to-end web applications. My focus is on <strong>Java backend development</strong> paired with
-          modern full-stack skills.</p>
+        <div class="about-photo" style="margin-bottom:1.5rem; text-align:center;">
+          <img src="WhatsApp%20Image%202026-05-20%20at%204.33.24%20PM.jpeg" alt="Profile Photo"
+            style="display:inline-block;height:12rem;width:10rem;object-fit:cover;border-radius:4px;" />
+        </div>
+        <div class="about-text-block">
+          <p>I'm <strong>Rakesh Gowda B P</strong>, a final-year Computer Science Engineering student passionate about
+            building end-to-end web applications. My focus is on <strong>Java backend development</strong> paired with
+            modern full-stack skills.</p>
 
-        <p>Currently gaining real-world experience as a <strong>Java Full Stack Intern at Tap Edtech Pvt Ltd</strong>,
-          where I'm building scalable applications that directly impact student workflows.</p>
+          <p>Currently gaining real-world experience as a <strong>Java Full Stack Intern at Tap Edtech Pvt Ltd</strong>,
+            where I'm building scalable applications that directly impact student workflows.</p>
 
-        <p>I'm driven by the challenge of turning complex problems into clean, efficient solutions — and I'm eager to
-          bring that mindset to a high-growth software team.</p>
+          <p>I'm driven by the challenge of turning complex problems into clean, efficient solutions — and I'm eager to
+            bring that mindset to a high-growth software team.</p>
 
-        <div class="about-badges">
-          <span class="about-badge ab-teal"><i class="fas fa-graduation-cap"></i> Graduating June 2026</span>
-          <span class="about-badge ab-orange"><i class="fas fa-briefcase"></i> Currently Interning</span>
-          <span class="about-badge ab-blue"><i class="fas fa-map-marker-alt"></i> Nelamangala, Karnataka</span>
-          <span class="about-badge ab-green"><i class="fas fa-check-circle"></i> Open to Relocation</span>
+          <div class="about-badges">
+            <span class="about-badge ab-teal"><i class="fas fa-graduation-cap"></i> Graduating June 2026</span>
+            <span class="about-badge ab-orange"><i class="fas fa-briefcase"></i> Currently Interning</span>
+            <span class="about-badge ab-blue"><i class="fas fa-map-marker-alt"></i> Nelamangala, Karnataka</span>
+            <span class="about-badge ab-green"><i class="fas fa-check-circle"></i> Open to Relocation</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Education + Experience Timeline in About -->
-    <div class="about-timeline-section reveal">
-      <div class="about-tl-title">Education &amp; Experience Timeline</div>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-dot orange"></div>
-          <div class="tl-date"><i class="fas fa-calendar"></i> Feb 2026 &ndash; Jun 2026</div>
-          <div class="tl-role">Java Full Stack Development Intern</div>
-          <div class="tl-company">Tap Edtech Pvt Ltd</div>
-          <div class="tl-desc">Building production-grade full-stack web apps with Node.js &amp; MySQL. Achieved 40%
-            faster data processing and automated student record workflows.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot teal"></div>
-          <div class="tl-date"><i class="fas fa-calendar"></i> Dec 2022 &ndash; Jun 2026</div>
-          <div class="tl-role">Bachelor of Engineering &mdash; Computer Science</div>
-          <div class="tl-company">Dr Sri Sri Sri Shivakumar Mahaswamy College of Engineering, Nelamangala</div>
-          <div class="tl-desc">Core CS: Data Structures, DBMS, Operating Systems, Software Engineering &amp; OOP with
-            Java.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot purple"></div>
-          <div class="tl-date"><i class="fas fa-calendar"></i> Jun 2020 &ndash; Apr 2022</div>
-          <div class="tl-role">Pre-University — PCMB</div>
-          <div class="tl-company">Toppers PU College</div>
-          <div class="tl-desc">Physics, Chemistry, Mathematics, Biology stream.</div>
-          <div class="tl-grade"><i class="fas fa-star"></i> 82.3%</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot blue"></div>
-          <div class="tl-date"><i class="fas fa-calendar"></i> 2020</div>
-          <div class="tl-role">10th Standard — SSLC</div>
-          <div class="tl-company">Green Wood English School</div>
-          <div class="tl-grade"><i class="fas fa-star"></i> 80.96%</div>
+      <!-- Education + Experience Timeline in About -->
+      <div class="about-timeline-section reveal">
+        <div class="about-tl-title">Education &amp; Experience Timeline</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot orange"></div>
+            <div class="tl-date"><i class="fas fa-calendar"></i> Feb 2026 &ndash; Jun 2026</div>
+            <div class="tl-role">Java Full Stack Development Intern</div>
+            <div class="tl-company">Tap Edtech Pvt Ltd</div>
+            <div class="tl-desc">Building production-grade full-stack web apps with Node.js &amp; MySQL. Achieved 40%
+              faster data processing and automated student record workflows.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot teal"></div>
+            <div class="tl-date"><i class="fas fa-calendar"></i> Dec 2022 &ndash; Jun 2026</div>
+            <div class="tl-role">Bachelor of Engineering &mdash; Computer Science</div>
+            <div class="tl-company">Dr Sri Sri Sri Shivakumar Mahaswamy College of Engineering, Nelamangala</div>
+            <div class="tl-desc">Core CS: Data Structures, DBMS, Operating Systems, Software Engineering &amp; OOP with
+              Java.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot purple"></div>
+            <div class="tl-date"><i class="fas fa-calendar"></i> Jun 2020 &ndash; Apr 2022</div>
+            <div class="tl-role">Pre-University — PCMB</div>
+            <div class="tl-company">Toppers PU College</div>
+            <div class="tl-desc">Physics, Chemistry, Mathematics, Biology stream.</div>
+            <div class="tl-grade"><i class="fas fa-star"></i> 82.3%</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot blue"></div>
+            <div class="tl-date"><i class="fas fa-calendar"></i> 2020</div>
+            <div class="tl-role">10th Standard — SSLC</div>
+            <div class="tl-company">Green Wood English School</div>
+            <div class="tl-grade"><i class="fas fa-star"></i> 80.96%</div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -2860,13 +2874,17 @@
             </div>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-item-icon">&#127760;</span><span
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" /><span
                 class="skill-item-name">HTML5</span><span class="skill-item-label">Markup</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#127912;</span><span
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" /><span
                 class="skill-item-name">CSS3</span><span class="skill-item-label">Styling</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#9889;</span><span
-                class="skill-item-name">JavaScript</span><span class="skill-item-label">Logic</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#128236;</span><span
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript" /><span class="skill-item-name">JavaScript</span><span
+                class="skill-item-label">Logic</span></div>
+            <div class="skill-item"><i class="fas fa-laptop-code skill-item-icon" style="color: #38bdf8;"></i><span
                 class="skill-item-name">Responsive Design</span><span class="skill-item-label">UI/UX</span></div>
           </div>
         </div>
@@ -2879,14 +2897,21 @@
             </div>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-item-icon">&#9749;</span><span
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><span
                 class="skill-item-name">Java</span><span class="skill-item-label">Primary</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#129001;</span><span
-                class="skill-item-name">Node.js</span><span class="skill-item-label">Runtime</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#128642;</span><span
-                class="skill-item-name">Express.js</span><span class="skill-item-label">Framework</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#127807;</span><span class="skill-item-name">Spring
-                Boot</span><span class="skill-item-label">Learning</span></div>
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="Node.js" /><span class="skill-item-name">Node.js</span><span
+                class="skill-item-label">Runtime</span></div>
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                alt="Express.js" /><span class="skill-item-name">Express.js</span><span
+                class="skill-item-label">Framework</span></div>
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                alt="Spring Boot" /><span class="skill-item-name">Spring Boot</span><span
+                class="skill-item-label">Learning</span></div>
           </div>
         </div>
         <div class="skill-box database reveal" style="transition-delay:.15s">
@@ -2898,14 +2923,19 @@
             </div>
           </div>
           <div class="skill-list">
-            <div class="skill-item"><span class="skill-item-icon">&#128044;</span><span
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" /><span
                 class="skill-item-name">MySQL</span><span class="skill-item-label">Relational</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#127811;</span><span
-                class="skill-item-name">MongoDB</span><span class="skill-item-label">NoSQL</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#128295;</span><span class="skill-item-name">REST
-                APIs</span><span class="skill-item-label">Architecture</span></div>
-            <div class="skill-item"><span class="skill-item-icon">&#129319;</span><span class="skill-item-name">Git
-                &amp; GitHub</span><span class="skill-item-label">DevOps</span></div>
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                alt="MongoDB" /><span class="skill-item-name">MongoDB</span><span class="skill-item-label">NoSQL</span>
+            </div>
+            <div class="skill-item"><i class="fas fa-network-wired skill-item-icon" style="color: #10b981;"></i><span
+                class="skill-item-name">REST APIs</span><span class="skill-item-label">Architecture</span></div>
+            <div class="skill-item"><img class="skill-item-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /><i
+                class="fab fa-github skill-item-icon" style="color: var(--text);"></i><span class="skill-item-name">Git
+                & GitHub</span><span class="skill-item-label">DevOps</span></div>
           </div>
         </div>
       </div>
@@ -3097,7 +3127,7 @@
         <div class="contact-form-wrap reveal-right">
           <div class="form-title">Send a Message &#9993;&#65039;</div>
           <form id="contactForm">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+            <input type="hidden" name="access_key" value="3b1b0e24-45ad-44fc-a881-955fd770a6d3" />
             <input type="hidden" name="subject" value="New Portfolio Message — Rakesh Gowda B P" />
             <input type="checkbox" name="botcheck" style="display:none" />
             <div class="form-row">
@@ -3228,21 +3258,7 @@
     });
     document.getElementById('backTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    /* PHOTO UPLOAD */
-    const photoInput = document.getElementById('photoInput'), photoImg = document.getElementById('photoImg'), photoPlaceholder = document.getElementById('photoPlaceholder'), photoDeleteBtn = document.getElementById('photoDeleteBtn');
-    photoInput.addEventListener('change', function () {
-      const file = this.files[0]; if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        photoImg.src = e.target.result; photoImg.style.display = 'block';
-        photoPlaceholder.style.display = 'none'; photoDeleteBtn.classList.add('show');
-      }; reader.readAsDataURL(file);
-    });
-    function deletePhoto() {
-      photoImg.src = ''; photoImg.style.display = 'none';
-      photoPlaceholder.style.display = 'flex'; photoDeleteBtn.classList.remove('show');
-      photoInput.value = '';
-    }
+
 
     /* WEB3FORMS */
     const cf = document.getElementById('contactForm'), sb = document.getElementById('submitBtn'), fm = document.getElementById('formMsg');
