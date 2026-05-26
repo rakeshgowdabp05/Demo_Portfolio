@@ -3261,16 +3261,44 @@
 
 
     /* WEB3FORMS */
-    const cf = document.getElementById('contactForm'), sb = document.getElementById('submitBtn'), fm = document.getElementById('formMsg');
+    const cf = document.getElementById('contactForm'),
+      sb = document.getElementById('submitBtn'),
+      fm = document.getElementById('formMsg');
+
     cf.addEventListener('submit', async e => {
-      e.preventDefault(); sb.disabled = true; sb.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...'; fm.className = 'form-msg';
+      e.preventDefault();
+
+      sb.disabled = true;
+      sb.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      fm.className = 'form-msg';
+
       try {
-        const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cf) }); const j = await r.json();
-        if (j.success) { fm.className = 'form-msg success'; fm.innerHTML = '&#10003; Sent successfully! Rakesh will reply soon.'; cf.reset(); }
-        else throw new Error();
+        const r = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(cf)
+        });
+
+        const j = await r.json();
+
+        if (j.success) {
+          fm.className = 'form-msg success';
+          fm.innerHTML = '&#10003; Sent successfully! Redirecting...';
+          cf.reset();
+
+          setTimeout(() => {
+            window.location.href = 'thank-you.html';
+          }, 800);
+        } else {
+          throw new Error();
+        }
+      } catch {
+        fm.className = 'form-msg error';
+        fm.innerHTML =
+          '&#10007; Something went wrong. Email directly: <strong>rakeshgowdabp05@gmail.com</strong>';
       }
-      catch { fm.className = 'form-msg error'; fm.innerHTML = '&#10007; Something went wrong. Email directly: <strong>rakeshgowdabp05@gmail.com</strong>'; }
-      sb.disabled = false; sb.innerHTML = '<i class="fas fa-paper-plane"></i> Send Opportunity';
+
+      sb.disabled = false;
+      sb.innerHTML = '<i class="fas fa-paper-plane"></i> Send Opportunity';
     });
 
     /* PRIME CHATBOT — Smart keyword engine */
