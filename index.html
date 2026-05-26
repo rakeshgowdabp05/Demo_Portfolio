@@ -3126,29 +3126,42 @@
         </div>
         <div class="contact-form-wrap reveal-right">
           <div class="form-title">Send a Message &#9993;&#65039;</div>
+
           <form id="contactForm">
-            <input type="hidden" name="access_key" value="3b1b0e24-45ad-44fc-a881-955fd770a6d3" />
-            <input type="hidden" name="subject" value="New Portfolio Message — Rakesh Gowda B P" />
-            <input type="checkbox" name="botcheck" style="display:none" />
             <div class="form-row">
-              <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="John Doe"
-                  required /></div>
-              <div class="form-group"><label>Your Email</label><input type="email" name="email"
-                  placeholder="john@company.com" required /></div>
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" name="email" placeholder="john@company.com" required />
+              </div>
             </div>
-            <div class="form-group"><label>Subject</label><input type="text" name="subject_field"
-                placeholder="Job Opportunity / Collaboration / Hello!" /></div>
-            <div class="form-group"><label>Message</label><textarea name="message"
-                placeholder="Tell me about the opportunity..." required></textarea></div>
-            <button type="submit" class="form-submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Send
-              Opportunity</button>
-            <p class="form-poweredby">Powered by <a href="https://web3forms.com" target="_blank">Web3Forms</a> — goes
-              directly to Rakesh's inbox.</p>
+
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" name="subject" placeholder="Job Opportunity / Collaboration / Hello!" required />
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" placeholder="Tell me about the opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitBtn">
+              <i class="fas fa-paper-plane"></i>
+              Send Opportunity
+            </button>
+
+            <p class="form-poweredby">
+              Secure contact form — message goes directly to Rakesh's inbox.
+            </p>
+
             <div class="form-msg" id="formMsg"></div>
           </form>
         </div>
-      </div>
-    </div>
   </section>
 
   <!-- FOOTER -->
@@ -3260,7 +3273,7 @@
 
 
 
-    /* WEB3FORMS */
+    /* CUSTOM CONTACT FORM */
     const cf = document.getElementById('contactForm'),
       sb = document.getElementById('submitBtn'),
       fm = document.getElementById('formMsg');
@@ -3271,18 +3284,31 @@
       sb.disabled = true;
       sb.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       fm.className = 'form-msg';
+      fm.innerHTML = '';
+
+      const formData = new FormData(cf);
+
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      };
 
       try {
-        const r = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch('/api/contact', {
           method: 'POST',
-          body: new FormData(cf)
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
         });
 
-        const j = await r.json();
+        const result = await response.json();
 
-        if (j.success) {
+        if (result.success) {
           fm.className = 'form-msg success';
-          fm.innerHTML = '&#10003; Sent successfully! Redirecting...';
+          fm.innerHTML = '&#10003; Message sent successfully! Redirecting...';
           cf.reset();
 
           setTimeout(() => {
@@ -3290,10 +3316,10 @@
           }, 800);
 
           return;
-        } else {
-          throw new Error();
         }
-      } catch {
+
+        throw new Error(result.message);
+      } catch (error) {
         fm.className = 'form-msg error';
         fm.innerHTML =
           '&#10007; Something went wrong. Email directly: <strong>rakeshgowdabp05@gmail.com</strong>';
