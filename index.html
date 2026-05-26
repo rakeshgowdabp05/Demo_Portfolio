@@ -3286,8 +3286,10 @@
           cf.reset();
 
           setTimeout(() => {
-            window.location.href = 'thank-you.html';
+            window.location.assign('/thank-you.html');
           }, 800);
+
+          return;
         } else {
           throw new Error();
         }
